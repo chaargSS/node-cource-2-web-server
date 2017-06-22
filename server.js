@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 var app = express();
 
 app.set('view engine','hbs');
@@ -44,6 +45,6 @@ app.get('/about',(req,res)=>{
     })  //will render at http://localhost:3000/about //pageTitle and currentYear is dynamic data
 });
 
-app.listen(3000,()=>{
-    console.log('server is up at port 3000');
+app.listen(port,()=>{
+    console.log(`server is up at port ${port} ` );
 });
